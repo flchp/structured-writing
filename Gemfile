@@ -41,6 +41,9 @@ group :development, :test do
   gem 'byebug', platform: :mri
 
   gem 'sqlite3', '~>1.3.0'
+
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
 end
 
 group :development do
