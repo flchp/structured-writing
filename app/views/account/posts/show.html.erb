@@ -10,8 +10,11 @@
   <h3>
     <%= @post.title %>
   </h3>
+  <h5>
+    <%= @post.created_at.strftime("%Y-%b-%d   %H:%M") %>
+  </h5>
   <p>
-    <%= @post.content %>
+    <%= simple_format(@post.content) %>
   </p>
 </div>
 

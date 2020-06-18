@@ -7,7 +7,7 @@
     <tr>
       <td>#</td>
       <td>Title</td>
-      <td>Content</td>
+      <td>Created_at</td>
     </tr>
     </thead>
     <tbody>
@@ -15,10 +15,10 @@
       <tr>
         <td>#</td>
         <td><%= link_to(post.title, account_post_path(post)) %></td>
-        <td><%= post.content %></td>
+        <td><%= post.created_at.strftime("%Y-%b-%d   %H:%M") %></td>
         <td>
-          <%= link_to("Edit", edit_account_post_path(post), class: "btn btn-sm btn-default")%>
-          <%= link_to("Delete", account_post_path(post),    class: "btn btn-sm btn-default",
+          <%= link_to("Edit", edit_account_post_path(post), class: "btn btn-sm btn-primary")%>
+          <%= link_to("Delete", account_post_path(post),    class: "btn btn-sm btn-danger",
                       method: :delete, data: { confirm: "Are you sure?" } )%>
         </td>
       </tr>
