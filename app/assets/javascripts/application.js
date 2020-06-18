@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap
 //= require simditor
+//= require social-share-button
+//= require social-share-button/wechat
 //= require_tree .

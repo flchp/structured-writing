@@ -12,6 +12,7 @@
   </h3>
   <h5>
     <%= @post.created_at.strftime("%Y-%b-%d   %H:%M") %>
+    <%= social_share_button_tag(@post.title, :allow_sites => %w(wechat weibo)) %>
   </h5>
   <p>
     <%= simple_format(@post.content) %>
