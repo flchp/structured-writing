@@ -1,6 +1,6 @@
 class Account::PostsController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
 
   def index
     @posts = current_user.posts
