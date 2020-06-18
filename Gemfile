@@ -38,6 +38,8 @@ gem 'pg', '~> 0.20'
 
 gem 'bootstrap-sass'
 
+gem 'devise'
+
 
 
 group :development, :test do
