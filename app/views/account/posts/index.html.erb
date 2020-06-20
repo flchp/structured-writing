@@ -27,11 +27,16 @@
             <span class="label label-success">公开</span>
           <% end %>
 
-          <% if post.is_set_as_model %>
-            <span class="label label-success">模版文章</span>
+          <% if (post.is_set_as_model && post.is_set_as_example)%>
+            <span class="label label-success">范例模版</span>
+          <% elsif post.is_set_as_model %>
+            <span class="label label-info">模版文章</span>
+          <% elsif post.is_set_as_example %>
+            <span class="label label-primary">范例文章</span>
           <% else %>
             <span class="label label-default">普通文章</span>
           <% end %>
+
         </td>
         <td>
           <%= link_to("修改", edit_account_post_path(post), class: "btn btn-xs btn-primary")%>
@@ -45,9 +50,15 @@
           <% end %>
 
           <% if post.is_set_as_model %>
-            <%= link_to("取消模版", quit_set_as_model_account_post_path(post), :method => :post, class: "btn btn-xs btn-info")%>
+            <%= link_to("取消模版", quit_set_as_model_account_post_path(post), :method => :post, class: "btn btn-xs btn-default")%>
           <% else %>
-            <%= link_to("设为模版", set_as_model_account_post_path(post), :method => :post, class: "btn btn-xs btn-primary")%>
+            <%= link_to("设为模版", set_as_model_account_post_path(post), :method => :post, class: "btn btn-xs btn-info")%>
+          <% end %>
+
+          <% if post.is_set_as_example %>
+            <%= link_to("取消范例", quit_set_as_example_account_post_path(post), :method => :post, class: "btn btn-xs btn-default")%>
+          <% else %>
+            <%= link_to("设为范例", set_as_example_account_post_path(post), :method => :post, class: "btn btn-xs btn-primary")%>
           <% end %>
         </td>
       </tr>

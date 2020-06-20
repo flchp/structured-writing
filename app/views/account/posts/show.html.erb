@@ -21,3 +21,11 @@
   </p>
 </div>
 
+<div>
+  <% if @post.is_set_as_model%>
+    <%= simple_form_for [:account, @post] do |f| %>
+      <%= f.association :post_example, collection: current_user.posts.is_example %>
+      <%= f.submit "选为本模版范例", data: { disable_with: "Submitting..." }, class: "btn btn-info" %>
+    <% end %>
+  <% end  %>
+</div>

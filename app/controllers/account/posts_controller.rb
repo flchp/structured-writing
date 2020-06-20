@@ -31,6 +31,9 @@ class Account::PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    if @post.post_model
+      @post_model_example = @post.post_model.post_example
+    end
   end
 
   def update
@@ -83,10 +86,25 @@ class Account::PostsController < ApplicationController
     @my_post_models = current_user.posts.is_model
   end
 
+  def set_as_example
+    @post = Post.find(params[:id])
+    @post.is_set_as_example = true
+    @post.save
+    redirect_to :back
+  end
+
+  def quit_set_as_example
+    @post = Post.find(params[:id])
+    @post.is_set_as_example = false
+    @post.save
+    redirect_to :back
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :content, :is_set_as_private, :is_set_as_model, :post_model_id)
+    params.require(:post).permit(:title, :content, :is_set_as_private, :is_set_as_model, :post_model_id,
+                                 :is_set_as_example, :post_example_id)
   end
 
 end

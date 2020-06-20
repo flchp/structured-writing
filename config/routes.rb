@@ -11,6 +11,8 @@ Rails.application.routes.draw do
         post :quit_set_as_private
         post :set_as_model
         post :quit_set_as_model
+        post :set_as_example
+        post :quit_set_as_example
       end
       collection do
         get :select_model_new
