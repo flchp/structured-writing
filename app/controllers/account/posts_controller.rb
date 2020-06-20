@@ -3,7 +3,7 @@ class Account::PostsController < ApplicationController
   before_action :authenticate_user!, except: :show
 
   def index
-    @posts = current_user.posts
+    @posts = current_user.posts.order("created_at DESC")
   end
 
   def new

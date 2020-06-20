@@ -21,7 +21,9 @@ Rails.application.routes.draw do
   end
 
   namespace :foreground do
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
 
 

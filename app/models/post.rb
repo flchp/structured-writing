@@ -15,6 +15,8 @@ class Post < ApplicationRecord
   belongs_to :post_example, class_name: 'Post',
              optional: true
 
+  has_many :comments, dependent: :destroy
+
   ##scope方法
   scope :is_model, -> {where(is_set_as_model: true)}
   scope :is_example, -> {where(is_set_as_example: true)}

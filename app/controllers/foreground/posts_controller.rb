@@ -6,5 +6,9 @@ class Foreground::PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.post_read_amount += 1
+    @post.save
+    @comment = Comment.new
+    @comments = @post.comments.order("created_at DESC")
   end
 end

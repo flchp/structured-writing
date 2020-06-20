@@ -13,19 +13,44 @@
   <h4>
     <%= @post.created_at.strftime("%Y-%b-%d   %H:%M") %>
   </h4>
+  <h4>
+    <label class="label label-default">浏览量：<%= @post.post_read_amount %></label>
+    <label class="label label-info">评论量：<%= @post.comments.count %></label>
+  </h4>
   <h5>
      分享本作品 建立影响力<%= social_share_button_tag(@post.title, :allow_sites => %w(wechat weibo)) %>
   </h5>
   <p>
     <%= simple_format(@post.content) %>
   </p>
+
+  <div>
+    <% if @post.is_set_as_model%>
+      <%= simple_form_for [:account, @post] do |f| %>
+        <%= f.association :post_example, collection: current_user.posts.is_example %>
+        <%= f.submit "选为本模版范例", data: { disable_with: "Submitting..." }, class: "btn btn-info" %>
+      <% end %>
+    <% end  %>
+  </div>
+
+  <div>
+    <h5>评论列表</h5>
+    <table class="table table-bordered">
+      <% @post.comments.each do |comment| %>
+        <tr>
+          <td>
+            <%= comment.user.email %>
+          </td>
+          <td>
+            <%= comment.created_at.strftime("%Y-%b-%d   %H:%M") %>
+          </td>
+          <td>
+            <%= comment.comment %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
 
-<div>
-  <% if @post.is_set_as_model%>
-    <%= simple_form_for [:account, @post] do |f| %>
-      <%= f.association :post_example, collection: current_user.posts.is_example %>
-      <%= f.submit "选为本模版范例", data: { disable_with: "Submitting..." }, class: "btn btn-info" %>
-    <% end %>
-  <% end  %>
-</div>
+
