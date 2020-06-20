@@ -1,3 +1,274 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+/*===== 首页通用设置 =====*/
+.welcome-box {
+  /* 副标题 */
+  h2 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  /* 短分隔线 */
+  .short-line {
+    background: #0070DE;
+    margin: 15px auto 30px auto;
+    width: 150px;
+    height: 1.5px;
+  }
+
+  /* 按钮 */
+  .btn-push {
+    background-color: transparent;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5); //半透明背景
+    padding: 10px 20px;
+    font-size: 20px;
+
+    /* 显示特效 */
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+
+  /* 按钮-鼠标滑动效果 */
+  .btn-push:hover {
+    background-color: #0070DE;
+    border-color: #0070DE;
+  }
+}
+
+/*===== Intro 首页-广告轮播 =====*/
+.intro-box {
+  /*===== 轮播内容 =====*/
+  .item {
+    /* 标题 */
+    h3 {
+      margin-top: -40%; //标题高度
+      font-size: 50px; //文字大小
+      letter-spacing: 5px; //文字间距
+    }
+
+    /* 内文 */
+    p {
+      font-size: 20px;
+    }
+
+    /* 图片 */
+    img {
+      width: 100%;
+    }
+  }
+
+  /*===== 换页按钮 =====*/
+  .carousel-control {
+    span {
+      margin-top: 145%; //按钮高度
+      font-size: 50px; //按钮大小
+    }
+  }
+}
+
+/*===== Story 首页-品牌故事 =====*/
+.story-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px; //区块间隔
+
+  /* 标题 */
+  h3 {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  /* 内文 */
+  p {
+    color: #333;
+    line-height: 24px;
+    text-align: justify;
+  }
+
+  /* 图片 */
+  img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  /* 分隔线 */
+  hr {
+    height: 1.5px;
+    background-color: #666;
+  }
+}
+
+/*===== Service 首页-服务优势 =====*/
+.service-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 25px 62.5px 50px 62.5px; //区块间隔
+
+  /* 图片 */
+  img {
+    width: 100px;
+  }
+
+  /*===== 内容区块 =====*/
+  .box {
+    margin: 0 25px 0 25px;
+
+    /* 标题 */
+    h3 {
+      font-size: 18px;
+    }
+
+    /* 内文 */
+    p {
+      color: #666;
+      line-height: 24px;
+      margin-top: 25px;
+      text-align: justify;
+    }
+  }
+}
+
+/*===== Categories 首页-商品分类 =====*/
+.categories-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+
+  /* 图片 */
+  img {
+    width: 300px;
+  }
+
+  /*===== Content 分类內容 =====*/
+  .category-content {
+    padding: 50px 0 0 0;
+
+    /* 标题 */
+    h3 {
+      padding: 20px 0 20px 0;
+      font-size: 18px;
+    }
+
+    /* 内文 */
+    p {
+      padding: 0 62.5px 50px 62.5px;
+      text-align: justify;
+      color: #666;
+    }
+  }
+}
+
+/*===== Show 首页-推荐商品 =====*/
+.show-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  /* 图片 */
+  img {
+    width: 100%;
+  }
+
+  /* 图片区块 */
+  .box {
+    margin-top: 15px;
+    box-shadow: 2px 2px 5px #888;
+  }
+
+  /* 图片区块-鼠标滑动效果 */
+  .box:hover {
+    opacity: 0.6;
+  }
+
+  /* 文字区块 */
+  .content {
+    margin-top: 15px;
+    color: #000;
+  }
+}
+
+/*===== Feedback 首页-用户反馈 =====*/
+.feedback-box {
+  /* 区块 */
+  background-color: #fff;
+  text-align: center;
+  padding: 50px 0 125px 0;
+
+  /* 标题 */
+  strong {
+    margin-top: 25px;
+    color: #4A6BB5;
+  }
+
+  /* 图片 */
+  img {
+    width: 80px;
+    margin: 0 auto 25px auto;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+
+  /* 文字 */
+  p {
+    color: #666;
+    max-width: 550px;
+    margin: 0 auto 25px auto;
+  }
+
+  /* 按钮设置 */
+  .carousel-indicators {
+    bottom: -70px; //按钮位置
+
+    /* 按钮 */
+    li {
+      background-color: #ddd;
+      height: 12.5px;
+      width: 12.5px;
+      margin: 0 5px;
+      border-radius: 0;
+
+      /* 按钮转向45度 */
+      -moz-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+    }
+
+    /* 按钮-启动效果 */
+    li.active {
+      background-color: #4A6BB5;
+    }
+  }
+}
+
+/*===== Brands 首页-合作伙伴 =====*/
+.brand-box {
+  /* 区块 */
+  background-color: #f8f8f8;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  /* 图片 */
+  img {
+    margin: 10px 15px 10px 15px;
+    width: 150px;
+  }
+}
+
+/*===== Push 首页-立即购买 =====*/
+.push-box {
+  /* 区块 */
+  text-align: center;
+  padding: 75px 0 0 0;
+  height: 200px;
+  background: image_url("start.jpeg") no-repeat scroll top center/ cover; //背景图片
+}
