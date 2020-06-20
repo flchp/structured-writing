@@ -18,6 +18,7 @@ class Post < ApplicationRecord
   ##scope方法
   scope :is_model, -> {where(is_set_as_model: true)}
   scope :is_example, -> {where(is_set_as_example: true)}
+  scope :is_public, ->{where(is_set_as_private: false)}
 
   ##回调
   # 使用模版写文章新增回调

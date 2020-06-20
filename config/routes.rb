@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :foreground do
+    resources :posts
+  end
+
 
 
 end
