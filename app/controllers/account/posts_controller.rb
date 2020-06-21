@@ -1,6 +1,6 @@
 class Account::PostsController < ApplicationController
 
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     @posts = current_user.posts.order("created_at DESC")
@@ -104,7 +104,7 @@ class Account::PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :is_set_as_private, :is_set_as_model, :post_model_id,
-                                 :is_set_as_example, :post_example_id)
+                                 :is_set_as_example, :post_example_id, :category_id)
   end
 
 end

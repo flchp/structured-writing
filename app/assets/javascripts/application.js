@@ -14,7 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-sprockets
 //= require simditor
 //= require social-share-button
 //= require social-share-button/wechat
+//= require select2
 //= require_tree .
